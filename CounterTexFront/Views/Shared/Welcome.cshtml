@@ -1,4 +1,4 @@
-﻿
+﻿﻿
 @{
     Layout = null;
 }
@@ -12,66 +12,65 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body style="background-image: url('../../images/fondo.jpg'); background-size: cover; background-position: center;">
-    <header class="bg-dark text-white d-flex justify-content-between align-items-center p-3">
-        <nav>
-            <a href="Index.html" class="text-white mx-3">Inicio</a>
-            <a href="@Url.Action("Login", "Login")" class="btn btn-secondary">Login</a>
-            <a href="registrarse.html" class="text-white mx-3">Registrarse</a>
-            <a href="contacto.html" class="text-white mx-3">Contacto</a>
-        </nav>
-        <div class="search-bar">
-            <input type="text"
-                   class="form-control"
-                   placeholder="Buscar"
-                   style="width: 200px" />
-        </div>
-    </header>
 
     <div class="logo text-center my-4">
-        <img src="~/Images/countertext.jpeg"
+        <img src="~/images/logo1.png"
              alt="Counter Tex Logo"
              class="img-fluid"
              style="width: 180px" />
     </div>
 
     <div class="main-content text-center">
-        <h1 class="text-black">Counter Tex</h1>
-        <h2 class="text-black">Costuras precisas, Finanzas impecables</h2>
-        <p class="text-black">
+        <h1 class="text-white">Counter Tex</h1>
+        <h2 class="text-white">Costuras precisas, Finanzas impecables</h2>
+        <p class="text-white">
             Bienvenidos a CounterTex su página de confianza para gestionar el
             control de producción y las finanzas de su empresa
         </p>
+
+        <div class="row justify-content-center mt-5">
+            <div class="col-auto">
+                <button class="btn btn-primary btn-lg" style="min-width: 150px;" onclick="window.location.href='@Url.Action("Login", "Login")'">
+                    Iniciar Sesión
+                </button>
+            </div>
+            <div class="col-auto">
+                <button class="btn btn-outline-secondary btn-lg" style="min-width: 150px;" onclick="window.location.href='@Url.Action("Register", "Account")'">
+                    Registrarse
+                </button>
+            </div>
+        </div>
     </div>
 
-    <div class="social-media text-center my-4">
-        <a href="#">
-            <img src="~/Images/facebook.jpg"
-                 alt="Facebook"
-                 class="img-fluid"
-                 style="width: 30px; height: 30px" />
-        </a>
-        <a href="#">
-            <img src="~/Images/Instagram.png"
-                 alt="Instagram"
-                 class="img-fluid"
-                 style="width: 30px; height: 30px" />
-        </a>
-        <a href="#">
-            <img src="~/Images/google.png"
-                 alt="Google"
-                 class="img-fluid"
-                 style="width: 30px; height: 30px" />
-        </a>
-        <a href="#">
-            <img src="~/Images/descarga111.jpg"
-                 alt="Contactanos"
-                 class="img-fluid"
-                 style="width: 30px; height: 30px" />
-        </a>
-    </div>
-
-    <footer class="text-center mt-5">
-        <a href="mailto:countertex@gmail.com" class="text-white">Contacto por Email</a>
+    <footer>
+        <div class="social-media text-center my-4">
+            <a href="#">
+                <img src="~/Images/facebook.jpg"
+                     alt="Facebook"
+                     class="img-fluid"
+                     style="width: 30px; height: 30px" />
+            </a>
+            <a href="#">
+                <img src="~/Images/Instagram.png"
+                     alt="Instagram"
+                     class="img-fluid"
+                     style="width: 30px; height: 30px" />
+            </a>
+            <a href="#">
+                <img src="~/Images/google.png"
+                     alt="Google"
+                     class="img-fluid"
+                     style="width: 30px; height: 30px" />
+            </a>
+            <a href="#">
+                <img src="~/Images/descarga111.jpg"
+                     alt="Contactanos"
+                     class="img-fluid"
+                     style="width: 30px; height: 30px" />
+            </a>
+            <br />
+            <a href="mailto:countertex@gmail.com" class="text-white" style="text-align: center;">Contacto vía Email</a>
+        </div>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

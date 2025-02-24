@@ -3,133 +3,154 @@
 }
 @model CounterTexFront.Models.LoginViewModel
 
-<section class="h-100 gradient-form" style="background-color: #eee;">
-    <div class="container py-5 h-100">
-        <div class="row d-flex justify-content-center align-items-center h-100">
-            <div class="col-xl-10">
-                <div class="card rounded-3 text-black">
-                    <div class="row g-0">
-                        <div class="col-lg-6">
-                            <div class="card-body p-md-5 mx-md-4">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="estilos.css">
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #333, #555), url('https://via.placeholder.com/1920x1080') no-repeat center center fixed;
+            background-size: cover;
+            color: #0f0f0f;
+        }
 
-                                <div class="text-center">
-                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp"
-                                         style="width: 185px;" alt="logo">
-                                    <h4 class="Iniciar Sesión"</h4>
-                                </div>
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
 
-                                <form method="post" action="@Url.Action("Login","Login")">
-                                    <p>Porfavor Inicia Sesión en tu cuenta</p>
+        .login-card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            width: 350px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
 
-                                    <div data-mdb-input-init class="form-outline mb-4">
-                                        @Html.LabelFor(m => m.UserName, new { @class = "form-label" })
-                                        @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", @placeholder = "correo@ejemplo.com" })
-                                        @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
-                                    </div>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('fondo.jpg');
+            background-size: cover;
+            background-position: center;
+            font-family: sans-serif;
+        }
 
-                                    <div data-mdb-input-init class="form-outline mb-4">
-                                        @Html.LabelFor(m => m.Password, new { @class = "form-label" })
-                                        @Html.TextBoxFor(m => m.Password, new { @class = "form-control", @placeholder = "Contraseña" })
-                                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
-                                    </div>
+        .logo {
+            width: 80px;
+            margin-bottom: 20px;
+        }
 
-                                    <div class="text-center pt-1 mb-5 pb-1">
-                                        <button data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="button">
-                                            Login
-                                        </button>
-                                        <a class="text-muted" href="#!">¿Olvidaste tu Contraseña?</a>
-                                    </div>
+        h2 {
+            margin: 0 0 20px;
+            color: #333;
+        }
 
-                                    <div class="d-flex align-items-center justify-content-center pb-4">
-                                        <p class="mb-0 me-2">¿No tienes una Cuenta?</p>
-                                        <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-danger">Create new</button>
-                                    </div>
+        .form-group {
+            margin-bottom: 15px;
+        }
 
-                                </form>
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
 
-                            </div>
-                        </div>
-                        <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
-                            <div class="text-white px-3 py-4 p-md-5 mx-md-4">
-                                <h4 class="mb-4">We are more than just a company</h4>
-                                <p class="small mb-0">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-@*<!DOCTYPE html>
-    <html lang="es">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Bienvenido a RunGym:::Inicio de Sesión</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-        <style>
-            body {
-                background: linear-gradient(to right, #667eea, #764ba2);
-                height: 100vh;
+            input[type="text"]:focus,
+            input[type="password"]:focus {
+                outline: none;
+                border-color: #007BFF;
             }
 
-            .login-container {
-                max-width: 400px;
-                background: white;
-                padding: 2rem;
-                border-radius: 10px;
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        .btn {
+            background: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            font-size: 14px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+            .btn:hover {
+                background: #0056b3;
             }
 
-            .form-control:focus {
-                border-color: #764ba2;
-                box-shadow: 0 0 5px rgba(118, 75, 162, 0.5);
+        .google-login {
+            background: #db4437;
+            margin-top: 10px;
+        }
+
+            .google-login:hover {
+                background: #c23321;
             }
 
-            .btn-primary {
-                background-color: #764ba2;
-                border: none;
-            }
+        .form-options {
+            margin: 10px 0;
+        }
 
-                .btn-primary:hover {
-                    background-color: #5a3e91;
-                }
-        </style>
-    </head>
-    <body class="d-flex align-items-center justify-content-center">
-        <div class="login-container text-center">
-            <h3 class="mb-4">Iniciar Sesión</h3>
-            @using (Html.BeginForm("Login", "Login", FormMethod.Post))
-            {
+        .forgot-password,
+        .register-link {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+            .forgot-password:hover,
+            .register-link:hover {
+                text-decoration: underline;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="login-card">
+            <img src="~/images/logo1.png" alt="Logo" class="logo">
+            <h2>Iniciar Sesión</h2>
+            <form id="loginForm" method="post" action="@Url.Action("Login","Login")">
                 @Html.AntiForgeryToken()
-
-
-
-
-
-
-
-
-
-                <div class="mb-3">
+                <div class="form-group">
                     @Html.LabelFor(m => m.UserName, new { @class = "form-label" })
                     @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", @placeholder = "correo@ejemplo.com" })
                     @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
                 </div>
-                <div class="mb-3">
+                <div class="form-group">
                     @Html.LabelFor(m => m.Password, new { @class = "form-label" })
                     @Html.TextBoxFor(m => m.Password, new { @class = "form-control", @placeholder = "Contraseña" })
                     @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
                 </div>
-                <input type="submit" class="btn btn-info" value="Iniciar Sesión" />
-            }
+                <input type="submit" class="btn" value="Ingresar" />
+                <button type="button" class="btn google-login" id="googleLogin">Continuar con Google</button>
+
+                <p>¿No tienes una cuenta? <a href="#" class="register-link">Regístrate</a></p>
+                <div class="form-options">
+                    <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+                </div>
+            </form>
         </div>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    </body>
-    </html>*@
+    </div>
+
+    <script>
+        const googleLoginButton = document.getElementById('googleLogin');
+        googleLoginButton.addEventListener('click', () => {
+            alert('Función de inicio de sesión con Google no implementada.');
+        });
+    </script>
+</body>
+</html>
