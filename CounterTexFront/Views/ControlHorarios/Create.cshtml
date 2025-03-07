@@ -1,0 +1,54 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="d-flex justify-content-center align-items-center vh-100" style="margin-top: -10% !important">
+    <div class="card w-75">
+        <div class="card-header text-center">
+            <h3 class="mb-4" style="margin-bottom: 0% !important">Control de Horarios</h3>
+        </div>
+
+        <div class="card-body d-flex justify-content-center align-items-center">
+            <form id="horarioForm" class="formulario w-100">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="fecha">Fecha</label>
+                            <input type="date" id="fecha" name="fecha" class="form-control" required />
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="hora_entrada">Hora de Entrada</label>
+                            <input type="time" id="hora_entrada" name="hora_entrada" class="form-control" required />
+                        </div>
+                    </div>
+                </div>
+                <br />
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="hora_salida">Hora de Salida</label>
+                            <input type="time" id="hora_salida" name="hora_salida" class="form-control" required />
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="hora_descanso">Tiempo de Descanso (min)</label>
+                            <input type="number" id="hora_descanso" name="hora_descanso" class="form-control" placeholder="Ej. 30" required />
+                        </div>
+                    </div>
+                </div>
+
+                <br />
+
+                <div class="d-flex justify-content-center">
+                    <input type="submit" id="guardarBtn" class="btn btn-primary" value="Guardar" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

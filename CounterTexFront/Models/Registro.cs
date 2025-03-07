@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.Web.Mvc;
 
 namespace CounterTexFront.Models
 {
@@ -30,11 +31,12 @@ namespace CounterTexFront.Models
 
         [Required(ErrorMessage = "Debe confirmar la contraseña.")]
         [DataType(DataType.Password)]
-        [Compare("Contraseña", ErrorMessage = "Las contraseñas no coinciden.")]
+        [System.ComponentModel.DataAnnotations.Compare("Contraseña", ErrorMessage = "Las contraseñas no coinciden.")]
         public string ConfirmarContraseña { get; set; }
 
         [DataType(DataType.DateTime)]
         [Display(Name = "Fecha de Registro")]
+        [HiddenInput]
         public DateTime FechaRegistro { get; set; } = DateTime.Now;
     }
 }
